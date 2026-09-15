@@ -267,6 +267,21 @@
     display: grid;
     gap: var(--space-3);
   }
+  
+
+.vendor-demo {
+  container-type: inline-size;
+  margin-bottom: var(--space-6);
+}
+
+.vendor-demo--narrow {
+  max-width: 22rem;
+}
+
+.vendor-demo--wide {
+  max-width: 50rem;
+}
+
 }
 
 
@@ -419,6 +434,49 @@
     box-shadow: var(--shadow-card);
   }
 
+  /* =========================
+   CONTAINER QUERY COMPONENT
+   ========================= */
+
+.vendor-card {
+  container-type: inline-size;
+  container-name: vendor-card;
+}
+
+/* Default layout:
+   This works good when the card is narrow and thinner. */
+.vendor-card__content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* When the card is larger due to content like long text, this will
+   switch from stacked layout to a horizontal one. */
+@container vendor-card (min-width: 32rem) {
+  .vendor-card {
+    display: grid;
+    grid-template-columns: 14rem 1fr;
+    gap: var(--space-5);
+    align-items: start;
+  }
+
+  .vendor-card__image {
+    grid-row: 1;
+    width: 14rem;
+    height: 100%;
+    min-height: 12rem;
+    margin: 0;
+    object-fit: cover;
+  }
+
+  .vendor-card__content {
+    min-width: 0;
+  }
+
+  .vendor-card__actions {
+    margin-top: var(--space-4);
+  }
+}
 
   .vendor-card__image {
     aspect-ratio: 4 / 3;
