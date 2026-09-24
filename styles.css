@@ -1092,37 +1092,3 @@ dd {
   .hero-overlay {
     display: none;
   }
-
-  .hero-content {
-    min-height: auto;
-
-    color: black;
-
-    text-align: left;
-  }
-
-  .hero-content h1,
-  .hero-details p {
-    color: black;
-  }
-
-  .vendor-grid,
-  .schedule-grid,
-  .information-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .vendor-card,
-  .info-card,
-  .schedule-card {
-    break-inside: avoid;
-
-    box-shadow: none;
-  }
-
-  .site-footer {
-    background: white;
-    color: black;
-  }
-
-}
