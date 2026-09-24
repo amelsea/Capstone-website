@@ -21,10 +21,40 @@
   WinterHaus Holiday Market
 
   Purpose:
-  This page is for my capstone website holiday market, that uses responsive images, accessible
-  alternative text, a system typography stack, reserved media
-  dimensions, and responsive layout changes.
+  This page is a responsive capstone website for a holiday
+  market. It uses responsive images, accessible alternative
+  text, a system typography stack, reserved media dimensions,
+  and responsive layout changes.
 
+  Asset inventory:
+  - Hero image: winterhaus-hero.jpg
+  - Vendor image: Vendor 1.jpg
+  - Vendor image: vendor 2.jpg
+  - Vendor image: vendor 3.jpg
+  - Market map: Market map.jpg
+  - Parking image: parking.jpg
+
+  Image format:
+  JPG.
+
+  Image source/provenance:
+  Course/project assets. Confirm final source and permissions
+  according to the actual project asset requirements.
+
+  SVG/audio/video/external embeds:
+  None are used on this page, so captions, transcripts, and
+  media controls are not required for this page.
+
+  Typography:
+  The stylesheet uses a system sans-serif body font and a
+  serif display font fallback. No external web font is loaded,
+  which avoids font-loading delay and licensing issues.
+
+  Layout stability:
+  Images include width and height attributes and/or reserved
+  aspect-ratio containers to reduce cumulative layout shift.
+
+  =========================================================
   -->
 
 
@@ -39,7 +69,8 @@
       <button
         class="menu-toggle"
         type="button"
-        aria-label="Open navigation">
+        aria-label="Open navigation"
+        aria-controls="main-navigation">
         ☰
       </button>
 
@@ -50,28 +81,45 @@
         WinterHaus
       </a>
 
-      <nav class="site-nav" aria-label="Main navigation">
+      <nav
+        class="site-nav"
+        id="main-navigation"
+        aria-label="Main navigation">
 
         <ul>
+
           <li>
-            <a href="#about">About</a>
+            <a
+              href="#about"
+              aria-current="page">
+              About
+            </a>
           </li>
 
           <li>
-            <a href="#schedule">Schedule</a>
+            <a href="#schedule">
+              Schedule
+            </a>
           </li>
 
           <li>
-            <a href="#vendors">Vendors</a>
+            <a href="#vendors">
+              Vendors
+            </a>
           </li>
 
           <li>
-            <a href="#faq">FAQ</a>
+            <a href="#faq">
+              FAQ
+            </a>
           </li>
 
           <li>
-            <a href="#contact">Contact</a>
+            <a href="#contact">
+              Contact
+            </a>
           </li>
+
         </ul>
 
       </nav>
@@ -95,75 +143,69 @@
          HERO
          =================================================== -->
 
-    <section class="hero">
+    <section
+      class="hero"
+      aria-labelledby="hero-heading">
 
       <!--
       ART DIRECTION NOTE
 
-      The same general hero composition works across the
-      responsive layouts because the primary market scene
-      remains understandable when cropped.
+      The same hero composition works across the responsive
+      layouts because the primary market scene remains
+      understandable when cropped.
 
       Small:
-      The image appears above the text.
+      Image appears above the title and event information.
 
       Medium:
-      The image remains full width above the hero content.
+      Image remains full width above the hero content.
 
       Large:
-      The image becomes a large background-style visual with
-      the WinterHaus title placed over the image.
+      CSS places the hero content over the image.
 
-      object-fit: cover and the defined aspect ratio preserve
-      the visual focus across responsive sizes.
+      The same image is intentionally used at each layout
+      because the composition remains useful across all
+      responsive contexts. The CSS controls the crop using
+      object-fit and the reserved aspect ratio.
       -->
 
       <div class="hero-media">
 
         <!--
-        RESPONSIVE IMAGE NOTE
+        RESPONSIVE IMAGE / PERFORMANCE NOTE
 
-        The hero uses srcset and sizes so that the browser can choose
-        an correct sized image.
+        The project currently contains one hero image:
+        images/winterhaus-hero.jpg
 
-        small  = about 600px
-        medium = about 1000px
-        large  = about 1600px
+        Because separate small/medium/large source files are
+        not currently available, the same image is used at
+        each responsive size.
 
-        The width and height reserve the expected
-        media region and help stop layout shifting.
+        This is acceptable because the composition remains
+        understandable across the small, medium, and large
+        layouts.
 
+        Width and height reserve the image space and help
+        reduce layout shifting.
+
+        fetchpriority="high" is used because the hero is
+        the primary above-the-fold image.
         -->
 
-        <picture>
-
-          <source
-            media="(max-width: 41.99rem)"
-            srcset="
-              images/winterhaus-hero-small.jpg 600w,
-              images/winterhaus-hero-medium.jpg 1000w"
-            sizes="100vw">
-
-          <source
-            media="(min-width: 42rem)"
-            srcset="
-              images/winterhaus-hero-medium.jpg 1000w,
-              images/winterhaus-hero-large.jpg 1600w"
-            sizes="100vw">
-
-          <img
-            src="images/winterhaus-hero-medium.jpg"
-            alt="Illustrated WinterHaus holiday market with decorated stalls and shoppers"
-            width="1600"
-            height="900"
-            fetchpriority="high"
-            decoding="async">
-
-        </picture>
+        <img
+          src="images/winterhaus-hero.jpg"
+          alt="Illustrated WinterHaus holiday market with decorated stalls and shoppers"
+          width="1600"
+          height="900"
+          fetchpriority="high"
+          decoding="async">
 
       </div>
 
-      <div class="hero-overlay"></div>
+      <div
+        class="hero-overlay"
+        aria-hidden="true">
+      </div>
 
       <div class="hero-content container">
 
@@ -171,7 +213,7 @@
           Holiday Market
         </p>
 
-        <h1>
+        <h1 id="hero-heading">
           WinterHaus
         </h1>
 
@@ -213,88 +255,36 @@
 
       <div class="container">
 
-        <div class="event-intro-grid">
+        <article class="info-card">
 
+          <p class="card-label">
+            About
+          </p>
 
-          <article class="info-card">
+          <h2 id="about-heading">
+            About the Event
+          </h2>
 
-            <p class="card-label">
-              About
-            </p>
+          <p>
+            WinterHaus is a festive holiday market bringing
+            together local makers, artists, food vendors, and
+            winter traditions for a weekend of seasonal
+            shopping and celebration.
+          </p>
 
-            <h2 id="about-heading">
-              About the Event
-            </h2>
+          <p>
+            Explore handmade gifts, enjoy seasonal treats,
+            listen to live music, and gather with friends
+            and family in a welcoming winter atmosphere.
+          </p>
 
-            <p>
-              WinterHaus is a festive holiday market bringing
-              together local makers, artists, food vendors, and
-              winter traditions for a weekend of seasonal
-              shopping and celebration.
-            </p>
+          <a
+            class="text-link"
+            href="#schedule">
+            Read More
+          </a>
 
-            <p>
-              Explore handmade gifts, enjoy seasonal treats,
-              listen to live music, and gather with friends
-              and family in a welcoming winter atmosphere.
-            </p>
-
-            <a
-              class="text-link"
-              href="#schedule">
-              Read More
-            </a>
-
-          </article>
-
-
-          <aside
-            class="info-card event-details"
-            aria-labelledby="event-details-heading">
-
-            <p class="card-label">
-              Plan Your Visit
-            </p>
-
-            <h2 id="event-details-heading">
-              Event Details
-            </h2>
-
-            <dl>
-
-              <div>
-                <dt>Date</dt>
-                <dd>
-                  December 12–14, 2026
-                </dd>
-              </div>
-
-              <div>
-                <dt>Time</dt>
-                <dd>
-                  10:00 AM–8:00 PM
-                </dd>
-              </div>
-
-              <div>
-                <dt>Location</dt>
-                <dd>
-                  Downtown Winter Plaza
-                </dd>
-              </div>
-
-              <div>
-                <dt>Parking</dt>
-                <dd>
-                  Free public parking nearby
-                </dd>
-              </div>
-
-            </dl>
-
-          </aside>
-
-        </div>
+        </article>
 
       </div>
 
@@ -337,7 +327,7 @@
             Purpose: Represents Evergreen Ceramics.
             Format: JPG.
             Source/provenance: Course/project asset.
-            License/permission: Educational license.
+            License/permission: Confirm according to project.
             Alt-text type: Informative.
             -->
 
@@ -386,7 +376,7 @@
             Purpose: Represents Frost & Flame.
             Format: JPG.
             Source/provenance: Course/project asset.
-            License/permission: Educational license.
+            License/permission: Confirm according to project.
             Alt-text type: Informative.
             -->
 
@@ -435,7 +425,7 @@
             Purpose: Represents Cozy Corner Knits.
             Format: JPG.
             Source/provenance: Course/project asset.
-            License/permission: Educational license.
+            License/permission: Confirm according to project.
             Alt-text type: Informative.
             -->
 
@@ -473,6 +463,65 @@
           </article>
 
         </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         EVENT DETAILS
+         =================================================== -->
+
+    <section
+      class="section event-details-section"
+      aria-labelledby="event-details-heading">
+
+      <div class="container">
+
+        <aside class="info-card event-details">
+
+          <p class="card-label">
+            Plan Your Visit
+          </p>
+
+          <h2 id="event-details-heading">
+            Event Details
+          </h2>
+
+          <dl>
+
+            <div>
+              <dt>Date</dt>
+              <dd>
+                December 12–14, 2026
+              </dd>
+            </div>
+
+            <div>
+              <dt>Time</dt>
+              <dd>
+                10:00 AM–8:00 PM
+              </dd>
+            </div>
+
+            <div>
+              <dt>Location</dt>
+              <dd>
+                Downtown Winter Plaza
+              </dd>
+            </div>
+
+            <div>
+              <dt>Parking</dt>
+              <dd>
+                Free public parking nearby
+              </dd>
+            </div>
+
+          </dl>
+
+        </aside>
 
       </div>
 
@@ -602,7 +651,7 @@
             Purpose: Provides visual orientation for visitors.
             Format: JPG.
             Source/provenance: Course/project asset.
-            License/permission: Educational license.
+            License/permission: Confirm according to project.
             Alt-text type: Informative/complex.
 
             Alternative treatment:
@@ -660,7 +709,7 @@
             Purpose: Provides a visual parking guide.
             Format: JPG.
             Source/provenance: Course/project asset.
-            License/permission: Educational license.
+            License/permission: Confirm according to project.
             Alt-text type: Informative.
 
             Alternative treatment:
@@ -781,6 +830,7 @@
 
     <section
       class="section newsletter"
+      id="newsletter"
       aria-labelledby="newsletter-heading">
 
       <div class="container">
@@ -797,7 +847,7 @@
               Stay Updated
             </h2>
 
-            <p>
+            <p id="newsletter-description">
               Get WinterHaus updates, vendor announcements,
               and holiday event information delivered to your inbox.
             </p>
@@ -808,7 +858,8 @@
           <form
             class="newsletter-form"
             action="#"
-            method="post">
+            method="post"
+            aria-describedby="newsletter-description">
 
             <div class="form-field">
 
@@ -914,9 +965,22 @@
   </footer>
 
 
+  <!--
+  =========================================================
+  AI DISCLOSURE
+  =========================================================
+
+  AI was used to assist with HTML structure, accessibility
+  improvements, responsive media documentation, and code
+  organization.
+
+  The generated output was reviewed and modified for the
+  WinterHaus project. Image filenames, content, layout,
+  alt text, and project-specific requirements were checked
+  against the project materials.
+
+  =========================================================
+  -->
+
 </body>
 </html>
-      
-
-
-         
