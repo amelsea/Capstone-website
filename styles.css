@@ -1,4 +1,10 @@
 /* ============================================================
+   WINTERHAUS HOLIDAY MARKET
+   RESPONSIVE CSS ARCHITECTURE
+   ============================================================ */
+
+
+/* ============================================================
    ASSET INVENTORY / PROVENANCE NOTES
 
    Images:
@@ -7,37 +13,37 @@
      Current format: JPG
      Dimensions: supplied project asset
      Expected display: full-width responsive hero
-     License/permission: education
+     License/permission: confirm according to project requirements
 
    - images/Vendor 1.jpg
      Purpose: vendor card
      Current format: JPG
      Expected display: responsive card image
-     License/permission: education
+     License/permission: confirm according to project requirements
 
    - images/vendor 2.jpg
      Purpose: vendor card
      Current format: JPG
      Expected display: responsive card image
-     License/permission: education
+     License/permission: confirm according to project requirements
 
    - images/vendor 3.jpg
      Purpose: vendor card
      Current format: JPG
      Expected display: responsive card image
-     License/permission: education
+     License/permission: confirm according to project requirements
 
    - images/Market map.jpg
      Purpose: market map
      Current format: JPG
      Expected display: responsive informational media
-     License/permission: education
+     License/permission: confirm according to project requirements
 
    - images/parking.jpg
      Purpose: parking information
      Current format: JPG
      Expected display: responsive informational media
-     License/permission: education
+     License/permission: confirm according to project requirements
 
    SVG:
    - No external SVG assets currently used.
@@ -56,7 +62,10 @@
    - System font stacks are used to reduce network requests,
      licensing issues, and layout shift.
 
-
+   Responsive image note:
+   Only one verified hero image is currently available.
+   The same composition works across the responsive layouts,
+   so <picture> art direction is not necessary for this asset.
    ============================================================ */
 
 
@@ -110,6 +119,7 @@ input {
 
 :root {
 
+  /* Colors */
   --color-background: #fffaf3;
   --color-surface: #ffffff;
   --color-surface-alt: #f3e8d8;
@@ -137,7 +147,7 @@ input {
     "Times New Roman",
     serif;
 
-
+  /* Spacing */
   --space-xs: 0.375rem;
   --space-sm: 0.75rem;
   --space-md: 1rem;
@@ -146,10 +156,15 @@ input {
   --space-2xl: 3rem;
   --space-3xl: 5rem;
 
+  /* Layout */
   --content-max: 72rem;
+
+  /* Shape */
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
+
+  /* Shadow */
   --shadow-card:
     0 0.25rem 1rem rgb(37 34 31 / 0.08);
 
@@ -438,6 +453,19 @@ a:hover {
    EVENT OVERVIEW
    ============================================================ */
 
+/*
+  SMALL:
+  About
+  Vendors
+  Event Details
+
+  MEDIUM:
+  About + Event Details
+  Vendors
+
+  LARGE:
+  About + Event Details + Vendors
+*/
 
 
 .event-overview {
@@ -910,6 +938,17 @@ a:hover {
      EVENT OVERVIEW
      ---------------------------------------------------------- */
 
+  /*
+    This is the important wireframe change.
+
+    Medium:
+
+    ┌───────────────────────┬──────────────────────┐
+    │ About the event       │ Event Details        │
+    └───────────────────────┴──────────────────────┘
+    │ Vendors                                      │
+    └──────────────────────────────────────────────┘
+  */
 
   .event-overview {
     grid-template-columns:
@@ -1134,7 +1173,14 @@ a:hover {
      ---------------------------------------------------------- */
 
   /*
-    Large view
+    Large wireframe:
+
+    ┌──────────────┬────────────────┬──────────────┐
+    │ About        │ Event Details  │ Vendors      │
+    │              │                │ [card]       │
+    │              │                │ [card]       │
+    │              │                │ [card]       │
+    └──────────────┴────────────────┴──────────────┘
   */
 
   .event-overview {
@@ -1320,3 +1366,30 @@ a:hover {
   }
 
 }
+
+
+/* ============================================================
+   TESTING CHECKLIST
+
+   Complete these manually before submitting:
+
+   [ ] Small/narrow layout checked against wireframe
+   [ ] Medium layout checked against wireframe
+   [ ] Large layout checked against wireframe
+   [ ] 200% browser zoom checked
+   [ ] Keyboard-only navigation checked
+   [ ] Visible focus states checked
+   [ ] Images display correctly
+   [ ] Image dimensions reserve layout space
+   [ ] Image file sizes/compression checked
+   [ ] Alt text checked
+   [ ] Form labels checked
+   [ ] FAQ keyboard behavior checked
+   [ ] Reduced-motion preference checked
+   [ ] Print layout checked
+   [ ] Slow-network behavior considered
+   [ ] No unintended horizontal scrolling
+   [ ] Container query checked with different card widths
+   [ ] Typography remains readable at narrow widths
+   [ ] Long content does not break the layout
+   ============================================================ */
