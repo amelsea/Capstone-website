@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,72 +11,24 @@
 
 <body>
 
-  <!--
-  =========================================================
-  MEDIA / TYPOGRAPHY PROJECT NOTES
-  =========================================================
-
-  Project:
-  WinterHaus Holiday Market
-
-  Purpose:
-  This page is a responsive capstone website for a holiday
-  market. It uses responsive images, accessible alternative
-  text, a system typography stack, reserved media dimensions,
-  and responsive layout changes.
-
-  Asset inventory:
-  - Hero image: winterhaus-hero.jpg
-  - Vendor image: Vendor 1.jpg
-  - Vendor image: vendor 2.jpg
-  - Vendor image: vendor 3.jpg
-  - Market map: Market map.jpg
-  - Parking image: parking.jpg
-
-  Image format:
-  JPG.
-
-  Image source/provenance:
-  Course/project assets. Confirm final source and permissions
-  according to the actual project asset requirements.
-
-  SVG/audio/video/external embeds:
-  None are used on this page, so captions, transcripts, and
-  media controls are not required for this page.
-
-  Typography:
-  The stylesheet uses a system sans-serif body font and a
-  serif display font fallback. No external web font is loaded,
-  which avoids font-loading delay and licensing issues.
-
-  Layout stability:
-  Images include width and height attributes and/or reserved
-  aspect-ratio containers to reduce cumulative layout shift.
-
-  =========================================================
-  -->
-
-
-  <!-- =====================================================
+  <!-- =========================================================
        HEADER
-       ===================================================== -->
+       ========================================================= -->
 
   <header class="site-header">
 
-    <div class="site-header__inner container">
+    <div class="header-inner container">
 
       <button
         class="menu-toggle"
         type="button"
         aria-label="Open navigation"
-        aria-controls="main-navigation">
-        ☰
+        aria-controls="main-navigation"
+        aria-expanded="false">
+        <span aria-hidden="true">☰</span>
       </button>
 
-      <a
-        class="site-logo"
-        href="#top"
-        aria-label="WinterHaus home">
+      <a class="site-logo" href="index.html" aria-label="WinterHaus home">
         WinterHaus
       </a>
 
@@ -86,41 +37,11 @@
         id="main-navigation"
         aria-label="Main navigation">
 
-        <ul>
-
-          <li>
-            <a
-              href="#about"
-              aria-current="page">
-              About
-            </a>
-          </li>
-
-          <li>
-            <a href="#schedule">
-              Schedule
-            </a>
-          </li>
-
-          <li>
-            <a href="#vendors">
-              Vendors
-            </a>
-          </li>
-
-          <li>
-            <a href="#faq">
-              FAQ
-            </a>
-          </li>
-
-          <li>
-            <a href="#contact">
-              Contact
-            </a>
-          </li>
-
-        </ul>
+        <a href="#about">About</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#vendors">Vendors</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact Us</a>
 
       </nav>
 
@@ -128,7 +49,7 @@
         class="search-button"
         type="button"
         aria-label="Search">
-        🔍
+        <span aria-hidden="true">⌕</span>
       </button>
 
     </div>
@@ -136,60 +57,29 @@
   </header>
 
 
-  <main id="top">
+  <main>
 
-
-    <!-- ===================================================
+    <!-- =======================================================
          HERO
-         =================================================== -->
+         ======================================================= -->
 
-    <section
-      class="hero"
-      aria-labelledby="hero-heading">
-
-      <!--
-      ART DIRECTION NOTE
-
-      The same hero composition works across the responsive
-      layouts because the primary market scene remains
-      understandable when cropped.
-
-      Small:
-      Image appears above the title and event information.
-
-      Medium:
-      Image remains full width above the hero content.
-
-      Large:
-      CSS places the hero content over the image.
-
-      The same image is intentionally used at each layout
-      because the composition remains useful across all
-      responsive contexts. The CSS controls the crop using
-      object-fit and the reserved aspect ratio.
-      -->
+    <section class="hero" aria-labelledby="hero-title">
 
       <div class="hero-media">
 
         <!--
-        RESPONSIVE IMAGE / PERFORMANCE NOTE
+          RESPONSIVE IMAGE / ART DIRECTION NOTE:
 
-        The project currently contains one hero image:
-        images/winterhaus-hero.jpg
+          The project currently has one verified hero image:
+          images/winterhaus-hero.jpg
 
-        Because separate small/medium/large source files are
-        not currently available, the same image is used at
-        each responsive size.
+          The same composition is intentionally used at small,
+          medium, and large widths. At small and medium widths,
+          the image appears above the market information. At the
+          large breakpoint, CSS places the text over the image.
 
-        This is acceptable because the composition remains
-        understandable across the small, medium, and large
-        layouts.
-
-        Width and height reserve the image space and help
-        reduce layout shifting.
-
-        fetchpriority="high" is used because the hero is
-        the primary above-the-fold image.
+          Separate small/medium/large image files are not used
+          because those assets do not currently exist in the project.
         -->
 
         <img
@@ -199,43 +89,36 @@
           height="900"
           fetchpriority="high"
           decoding="async">
-
       </div>
 
-      <div
-        class="hero-overlay"
-        aria-hidden="true">
-      </div>
+      <div class="hero-overlay" aria-hidden="true"></div>
 
       <div class="hero-content container">
 
-        <p class="hero-eyebrow">
-          Holiday Market
-        </p>
+        <p class="eyebrow">Holiday Market</p>
 
-        <h1 id="hero-heading">
-          WinterHaus
-        </h1>
+        <h1 id="hero-title">WinterHaus</h1>
 
         <div class="hero-details">
 
           <p>
-            December 12–14, 2026
+            <strong>Date</strong>
+            December 6–8
           </p>
 
           <p>
-            10:00 AM–8:00 PM
+            <strong>Time</strong>
+            10 AM–8 PM
           </p>
 
           <p>
-            Downtown Winter Plaza
+            <strong>Location</strong>
+            Downtown Market Square
           </p>
 
         </div>
 
-        <a
-          class="button"
-          href="#schedule">
+        <a class="button button-primary" href="#schedule">
           View Schedule
         </a>
 
@@ -244,328 +127,249 @@
     </section>
 
 
-    <!-- ===================================================
-         ABOUT
-         =================================================== -->
+    <!-- =======================================================
+         EVENT OVERVIEW
+         This shared wrapper allows the layout to match all
+         three wireframe sizes.
+         ======================================================= -->
 
-    <section
-      class="section event-intro"
-      id="about"
-      aria-labelledby="about-heading">
+    <div class="event-overview container">
 
-      <div class="container">
+      <!-- =====================================================
+           ABOUT
+           ===================================================== -->
 
-        <article class="info-card">
+      <section
+        class="event-about"
+        id="about"
+        aria-labelledby="about-title">
 
-          <p class="card-label">
-            About
-          </p>
+        <div class="section-heading">
 
-          <h2 id="about-heading">
-            About the Event
-          </h2>
-
-          <p>
-            WinterHaus is a festive holiday market bringing
-            together local makers, artists, food vendors, and
-            winter traditions for a weekend of seasonal
-            shopping and celebration.
-          </p>
-
-          <p>
-            Explore handmade gifts, enjoy seasonal treats,
-            listen to live music, and gather with friends
-            and family in a welcoming winter atmosphere.
-          </p>
-
-          <a
-            class="text-link"
-            href="#schedule">
-            Read More
-          </a>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- ===================================================
-         VENDORS
-         =================================================== -->
-
-    <section
-      class="section vendors"
-      id="vendors"
-      aria-labelledby="vendors-heading">
-
-      <div class="container">
-
-        <p class="section-kicker">
-          Shop Local
-        </p>
-
-        <h2
-          class="section-heading"
-          id="vendors-heading">
-          Featured Vendors
-        </h2>
-
-
-        <div class="vendor-grid">
-
-
-          <!-- Vendor 1 -->
-
-          <article class="vendor-card">
-
-            <!--
-            ASSET INVENTORY
-
-            Asset: Vendor 1.jpg
-            Purpose: Represents Evergreen Ceramics.
-            Format: JPG.
-            Source/provenance: Course/project asset.
-            License/permission: Confirm according to project.
-            Alt-text type: Informative.
-            -->
-
-            <img
-              class="vendor-card__image"
-              src="images/Vendor 1.jpg"
-              alt="Handmade ceramic merchandise at a holiday market"
-              width="1000"
-              height="558"
-              loading="lazy"
-              decoding="async">
-
-            <div class="vendor-card__content">
-
-              <p class="vendor-category">
-                Handmade Goods
-              </p>
-
-              <h3>
-                Evergreen Ceramics
-              </h3>
-
-              <p>
-                Handmade pottery and winter decorations.
-              </p>
-
-              <a
-                class="button button-secondary"
-                href="#contact">
-                Vendor Info
-              </a>
-
-            </div>
-
-          </article>
-
-
-          <!-- Vendor 2 -->
-
-          <article class="vendor-card">
-
-            <!--
-            ASSET INVENTORY
-
-            Asset: vendor 2.jpg
-            Purpose: Represents Frost & Flame.
-            Format: JPG.
-            Source/provenance: Course/project asset.
-            License/permission: Confirm according to project.
-            Alt-text type: Informative.
-            -->
-
-            <img
-              class="vendor-card__image"
-              src="images/vendor 2.jpg"
-              alt="Handmade candles and soaps at a holiday market"
-              width="1000"
-              height="667"
-              loading="lazy"
-              decoding="async">
-
-            <div class="vendor-card__content">
-
-              <p class="vendor-category">
-                Home Goods
-              </p>
-
-              <h3>
-                Frost &amp; Flame
-              </h3>
-
-              <p>
-                Seasonal candles, soaps, and home goods.
-              </p>
-
-              <a
-                class="button button-secondary"
-                href="#contact">
-                Vendor Info
-              </a>
-
-            </div>
-
-          </article>
-
-
-          <!-- Vendor 3 -->
-
-          <article class="vendor-card">
-
-            <!--
-            ASSET INVENTORY
-
-            Asset: vendor 3.jpg
-            Purpose: Represents Cozy Corner Knits.
-            Format: JPG.
-            Source/provenance: Course/project asset.
-            License/permission: Confirm according to project.
-            Alt-text type: Informative.
-            -->
-
-            <img
-              class="vendor-card__image"
-              src="images/vendor 3.jpg"
-              alt="Knitted scarves and winter accessories at a holiday market"
-              width="1000"
-              height="560"
-              loading="lazy"
-              decoding="async">
-
-            <div class="vendor-card__content">
-
-              <p class="vendor-category">
-                Winter Gifts
-              </p>
-
-              <h3>
-                Cozy Corner Knits
-              </h3>
-
-              <p>
-                Hand-knitted scarves, hats, and winter gifts.
-              </p>
-
-              <a
-                class="button button-secondary"
-                href="#contact">
-                Vendor Info
-              </a>
-
-            </div>
-
-          </article>
+          <h2 id="about-title">About the event</h2>
 
         </div>
 
-      </div>
+        <div class="about-content">
 
-    </section>
-
-
-    <!-- ===================================================
-         EVENT DETAILS
-         =================================================== -->
-
-    <section
-      class="section event-details-section"
-      aria-labelledby="event-details-heading">
-
-      <div class="container">
-
-        <aside class="info-card event-details">
-
-          <p class="card-label">
-            Plan Your Visit
+          <p>
+            WinterHaus is a festive holiday market featuring local
+            makers, seasonal food, handmade gifts, and activities
+            for the community.
           </p>
 
-          <h2 id="event-details-heading">
-            Event Details
-          </h2>
+          <p>
+            Visitors can explore independent vendors, enjoy
+            seasonal treats, and experience the atmosphere of the
+            holiday season in one welcoming market.
+          </p>
+
+          <a class="text-link" href="#faq">
+            Read More
+          </a>
+
+        </div>
+
+      </section>
+
+
+      <!-- =====================================================
+           EVENT DETAILS
+           ===================================================== -->
+
+      <section
+        class="event-details-section"
+        aria-labelledby="details-title">
+
+        <div class="info-card event-details">
+
+          <h2 id="details-title">Event Details</h2>
 
           <dl>
 
-            <div>
-              <dt>Date</dt>
-              <dd>
-                December 12–14, 2026
-              </dd>
+            <div class="detail-row">
+              <dt>
+                <span aria-hidden="true">●</span>
+                Date
+              </dt>
+              <dd>December 6–8</dd>
             </div>
 
-            <div>
-              <dt>Time</dt>
-              <dd>
-                10:00 AM–8:00 PM
-              </dd>
+            <div class="detail-row">
+              <dt>
+                <span aria-hidden="true">●</span>
+                Time
+              </dt>
+              <dd>10 AM–8 PM</dd>
             </div>
 
-            <div>
-              <dt>Location</dt>
-              <dd>
-                Downtown Winter Plaza
-              </dd>
+            <div class="detail-row">
+              <dt>
+                <span aria-hidden="true">●</span>
+                Location
+              </dt>
+              <dd>Downtown Market Square</dd>
             </div>
 
-            <div>
-              <dt>Parking</dt>
-              <dd>
-                Free public parking nearby
-              </dd>
+            <div class="detail-row">
+              <dt>
+                <span aria-hidden="true">●</span>
+                Parking
+              </dt>
+              <dd>Market Garage and nearby street parking</dd>
             </div>
 
           </dl>
 
-        </aside>
+        </div>
 
-      </div>
-
-    </section>
+      </section>
 
 
-    <!-- ===================================================
+      <!-- =====================================================
+           VENDORS
+           ===================================================== -->
+
+      <section
+        class="vendors"
+        id="vendors"
+        aria-labelledby="vendors-title">
+
+        <div class="section-heading">
+
+          <h2 id="vendors-title">Vendors</h2>
+
+        </div>
+
+        <div class="vendor-grid">
+
+          <article class="vendor-card">
+
+            <div class="vendor-media">
+
+              <img
+                src="images/Vendor 1.jpg"
+                alt="Display of handmade holiday products from a WinterHaus vendor"
+                width="800"
+                height="500"
+                loading="lazy"
+                decoding="async">
+
+            </div>
+
+            <div class="vendor-content">
+
+              <h3>Handmade Goods</h3>
+
+              <p>
+                Handmade gifts and seasonal pieces created by
+                local artists and makers.
+              </p>
+
+              <a href="#contact" class="text-link">
+                Learn More
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <article class="vendor-card">
+
+            <div class="vendor-media">
+
+              <img
+                src="images/vendor 2.jpg"
+                alt="Seasonal food and baked goods from a WinterHaus vendor"
+                width="800"
+                height="500"
+                loading="lazy"
+                decoding="async">
+
+            </div>
+
+            <div class="vendor-content">
+
+              <h3>Seasonal Treats</h3>
+
+              <p>
+                Holiday sweets, warm drinks, and seasonal food
+                from local food vendors.
+              </p>
+
+              <a href="#contact" class="text-link">
+                Learn More
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <article class="vendor-card">
+
+            <div class="vendor-media">
+
+              <img
+                src="images/vendor 3.jpg"
+                alt="Holiday decorations and gifts displayed by a WinterHaus vendor"
+                width="800"
+                height="500"
+                loading="lazy"
+                decoding="async">
+
+            </div>
+
+            <div class="vendor-content">
+
+              <h3>Holiday Gifts</h3>
+
+              <p>
+                Unique decorations, gifts, and seasonal finds
+                for everyone on your list.
+              </p>
+
+              <a href="#contact" class="text-link">
+                Learn More
+              </a>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </section>
+
+    </div>
+
+
+    <!-- =======================================================
          SCHEDULE
-         =================================================== -->
+         ======================================================= -->
 
     <section
-      class="section schedule"
+      class="schedule"
       id="schedule"
-      aria-labelledby="schedule-heading">
+      aria-labelledby="schedule-title">
 
       <div class="container">
 
-        <p class="section-kicker">
-          Plan Your Weekend
-        </p>
-
-        <h2
-          class="section-heading"
-          id="schedule-heading">
-          Schedule
-        </h2>
-
+        <div class="section-heading">
+          <h2 id="schedule-title">Schedule Overview</h2>
+        </div>
 
         <div class="schedule-grid">
 
-
           <article class="schedule-card">
 
-            <p class="schedule-time">
-              5:00 PM–8:00 PM
-            </p>
+            <p class="schedule-time">10:00 AM</p>
 
-            <h3>
-              Friday Evening
-            </h3>
+            <h3>Market Opens</h3>
 
             <p>
-              Opening celebration, live music, local shopping,
-              and seasonal refreshments.
+              Browse local vendors, seasonal gifts, and food.
             </p>
 
           </article>
@@ -573,17 +377,12 @@
 
           <article class="schedule-card">
 
-            <p class="schedule-time">
-              10:00 AM–8:00 PM
-            </p>
+            <p class="schedule-time">2:00 PM</p>
 
-            <h3>
-              Saturday
-            </h3>
+            <h3>Holiday Workshop</h3>
 
             <p>
-              Full market day featuring vendors, workshops,
-              food, music, and family activities.
+              Join a hands-on seasonal activity for visitors.
             </p>
 
           </article>
@@ -591,17 +390,12 @@
 
           <article class="schedule-card">
 
-            <p class="schedule-time">
-              10:00 AM–5:00 PM
-            </p>
+            <p class="schedule-time">6:00 PM</p>
 
-            <h3>
-              Sunday
-            </h3>
+            <h3>Evening Celebration</h3>
 
             <p>
-              Final shopping day with holiday activities
-              and a closing winter celebration.
+              Enjoy music, lights, food, and holiday activities.
             </p>
 
           </article>
@@ -613,136 +407,66 @@
     </section>
 
 
-    <!-- ===================================================
+    <!-- =======================================================
          MARKET INFORMATION
-         =================================================== -->
+         ======================================================= -->
 
     <section
-      class="section market-information"
-      aria-labelledby="market-information-heading">
+      class="market-information"
+      aria-labelledby="market-info-title">
 
       <div class="container">
 
-        <h2
-          class="visually-hidden"
-          id="market-information-heading">
-          Market Information
-        </h2>
+        <div class="section-heading">
+          <h2 id="market-info-title">Market Information</h2>
+        </div>
 
-        <div class="information-grid">
-
-
-          <!-- MARKET MAP -->
+        <div class="market-information-grid">
 
           <article class="info-card">
 
-            <p class="card-label">
-              Explore
-            </p>
-
-            <h2>
-              Market Map
-            </h2>
-
-            <!--
-            ASSET INVENTORY
-
-            Asset: Market map.jpg
-            Purpose: Provides visual orientation for visitors.
-            Format: JPG.
-            Source/provenance: Course/project asset.
-            License/permission: Confirm according to project.
-            Alt-text type: Informative/complex.
-
-            Alternative treatment:
-            Written map information is provided below the image
-            so the image is not the only way to understand the
-            location information.
-            -->
+            <h3>Market Map</h3>
 
             <div class="map-media">
 
               <img
                 src="images/Market map.jpg"
-                alt="Map showing WinterHaus market areas and locations"
-                width="1000"
-                height="558"
+                alt="Map showing the layout and vendor areas of the WinterHaus holiday market"
+                width="1200"
+                height="800"
                 loading="lazy"
                 decoding="async">
 
             </div>
 
-            <div class="map-text">
-
-              <h3>
-                Map Information
-              </h3>
-
-              <p>
-                The WinterHaus market is located at Downtown
-                Winter Plaza. Vendor areas, food vendors,
-                activity areas, and visitor information are
-                organized throughout the market space.
-              </p>
-
-            </div>
+            <p>
+              Use the market map to locate vendors, activities,
+              entrances, and visitor areas.
+            </p>
 
           </article>
 
 
-          <!-- PARKING -->
-
           <article class="info-card">
 
-            <p class="card-label">
-              Visit
-            </p>
-
-            <h2>
-              Parking
-            </h2>
-
-            <!--
-            ASSET INVENTORY
-
-            Asset: parking.jpg
-            Purpose: Provides a visual parking guide.
-            Format: JPG.
-            Source/provenance: Course/project asset.
-            License/permission: Confirm according to project.
-            Alt-text type: Informative.
-
-            Alternative treatment:
-            Written parking information is included below the
-            image so the image is not the only source of
-            information.
-            -->
+            <h3>Parking</h3>
 
             <div class="map-media">
 
               <img
                 src="images/parking.jpg"
-                alt="Parking guide showing parking areas near WinterHaus"
-                width="1000"
-                height="558"
+                alt="Parking area near the WinterHaus holiday market"
+                width="1200"
+                height="800"
                 loading="lazy"
                 decoding="async">
 
             </div>
 
-            <div class="map-text">
-
-              <h3>
-                Parking Information
-              </h3>
-
-              <p>
-                Free public parking is available near Downtown
-                Winter Plaza. Visitors should follow posted event
-                and parking signs when arriving at the market.
-              </p>
-
-            </div>
+            <p>
+              Parking is available in the nearby market garage
+              and surrounding street parking areas.
+            </p>
 
           </article>
 
@@ -753,68 +477,44 @@
     </section>
 
 
-    <!-- ===================================================
+    <!-- =======================================================
          FAQ
-         =================================================== -->
+         ======================================================= -->
 
     <section
-      class="section faq"
+      class="faq"
       id="faq"
-      aria-labelledby="faq-heading">
+      aria-labelledby="faq-title">
 
       <div class="container">
 
-        <p class="section-kicker">
-          Need to Know
-        </p>
-
-        <h2
-          class="section-heading"
-          id="faq-heading">
-          Frequently Asked Questions
-        </h2>
+        <div class="section-heading">
+          <h2 id="faq-title">Frequently Asked Questions</h2>
+        </div>
 
         <div class="faq-list">
 
           <details class="faq-item">
-
-            <summary>
-              Is WinterHaus free to attend?
-            </summary>
-
+            <summary>Is the market free to attend?</summary>
             <p>
-              Yes. Admission to the market is free. Individual
-              workshops or special activities may have separate fees.
+              Yes. General admission to WinterHaus is free.
             </p>
-
           </details>
 
-
           <details class="faq-item">
-
-            <summary>
-              Is the market family-friendly?
-            </summary>
-
+            <summary>Are pets allowed?</summary>
             <p>
-              Yes. WinterHaus welcomes visitors of all ages and
-              includes seasonal activities for families and children.
+              Service animals are welcome. Check event guidance
+              for other pets before visiting.
             </p>
-
           </details>
 
-
           <details class="faq-item">
-
-            <summary>
-              Are pets allowed?
-            </summary>
-
+            <summary>Can I purchase gifts from vendors?</summary>
             <p>
-              Well-behaved pets are welcome in outdoor market areas.
-              Service animals are welcome throughout the event.
+              Yes. Vendors offer a variety of handmade goods,
+              seasonal foods, decorations, and gifts.
             </p>
-
           </details>
 
         </div>
@@ -824,14 +524,14 @@
     </section>
 
 
-    <!-- ===================================================
+    <!-- =======================================================
          NEWSLETTER
-         =================================================== -->
+         ======================================================= -->
 
     <section
-      class="section newsletter"
-      id="newsletter"
-      aria-labelledby="newsletter-heading">
+      class="newsletter"
+      id="contact"
+      aria-labelledby="newsletter-title">
 
       <div class="container">
 
@@ -839,27 +539,21 @@
 
           <div class="newsletter-content">
 
-            <p class="section-kicker">
-              Stay Connected
-            </p>
+            <p class="eyebrow">Stay updated</p>
 
-            <h2 id="newsletter-heading">
-              Stay Updated
+            <h2 id="newsletter-title">
+              Get WinterHaus updates
             </h2>
 
-            <p id="newsletter-description">
-              Get WinterHaus updates, vendor announcements,
-              and holiday event information delivered to your inbox.
+            <p>
+              Sign up for event reminders, vendor announcements,
+              and seasonal updates.
             </p>
 
           </div>
 
 
-          <form
-            class="newsletter-form"
-            action="#"
-            method="post"
-            aria-describedby="newsletter-description">
+          <form class="newsletter-form">
 
             <div class="form-field">
 
@@ -871,14 +565,18 @@
                 type="email"
                 id="email"
                 name="email"
-                placeholder="you@example.com"
                 autocomplete="email"
-                required>
+                required
+                aria-describedby="email-help">
+
+              <p id="email-help" class="form-help">
+                Enter your email to receive WinterHaus updates.
+              </p>
 
             </div>
 
             <button
-              class="button"
+              class="button button-primary"
               type="submit">
               Sign Up
             </button>
@@ -894,67 +592,60 @@
   </main>
 
 
-  <!-- =====================================================
+  <!-- =========================================================
        FOOTER
-       ===================================================== -->
+       ========================================================= -->
 
-  <footer
-    class="site-footer"
-    id="contact">
+  <footer class="site-footer">
 
     <div class="container footer-grid">
 
-
       <div class="footer-brand">
 
-        <h2>
+        <a class="footer-logo" href="index.html">
           WinterHaus
-        </h2>
+        </a>
 
         <p>
-          Holiday Market
-        </p>
-
-        <p>
-          &copy; 2026 WinterHaus
+          A seasonal holiday market celebrating local makers,
+          food, and community.
         </p>
 
       </div>
 
 
-      <div class="footer-links">
+      <nav
+        class="footer-links"
+        aria-label="Footer navigation">
 
-        <h3>
-          Quick Links
-        </h3>
+        <h2>Quick Links</h2>
 
-        <nav aria-label="Footer navigation">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#schedule">Schedule</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#vendors">Vendors</a></li>
+        </ul>
 
-          <a href="#about">About</a>
-          <a href="#schedule">Schedule</a>
-          <a href="#vendors">Vendors</a>
-          <a href="#faq">FAQ</a>
-
-        </nav>
-
-      </div>
+      </nav>
 
 
       <div class="footer-contact">
 
-        <h3>
-          Contact Us
-        </h3>
+        <h2>Contact</h2>
 
         <p>
-          <a href="mailto:hello@winterhaus.com">
-            hello@winterhaus.com
-          </a>
+          WinterHaus Holiday Market
         </p>
 
         <p>
-          <a href="tel:+15551234567">
-            (555) 123-4567
+          Downtown Market Square
+        </p>
+
+        <p>
+          <a href="mailto:hello@winterhaus.example">
+            hello@winterhaus.example
           </a>
         </p>
 
@@ -962,25 +653,28 @@
 
     </div>
 
+
+    <div class="footer-bottom container">
+
+      <p>
+        © 2026 WinterHaus Holiday Market
+      </p>
+
+    </div>
+
   </footer>
 
 
-  <!--
-  =========================================================
-  AI DISCLOSURE
-  =========================================================
+  <!-- =========================================================
+       ASSIGNMENT / AI DISCLOSURE
 
-  AI was used to assist with HTML structure, accessibility
-  improvements, responsive media documentation, and code
-  organization.
-
-  The generated output was reviewed and modified for the
-  WinterHaus project. Image filenames, content, layout,
-  alt text, and project-specific requirements were checked
-  against the project materials.
-
-  =========================================================
-  -->
+       AI was used to help organize and refine the responsive
+       HTML/CSS structure. The generated output was reviewed
+       against the provided wireframes and assignment requirements.
+       The HTML structure, responsive breakpoints, accessibility
+       features, image handling, layout behavior, and content
+       were reviewed and adjusted for the project.
+       ========================================================= -->
 
 </body>
 </html>
