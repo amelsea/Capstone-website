@@ -644,26 +644,25 @@
    COMPONENTS — NEWSLETTER
    ========================================================== */
 
-/* ==========================================================
-   NEWSLETTER FORM
-   ========================================================== */
-
 @layer components {
+
+  .newsletter {
+    background: var(--color-secondary);
+    color: var(--color-surface);
+  }
 
   .newsletter-form {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    align-items: end;
     gap: var(--space-md);
   }
 
   .newsletter-form label {
-    grid-column: 1 / -1;
     font-weight: 700;
   }
 
   .newsletter-form input {
     width: 100%;
+
     min-height: 2.75rem;
 
     padding: var(--space-sm) var(--space-md);
@@ -673,11 +672,6 @@
 
     background: var(--color-surface);
     color: var(--color-text);
-  }
-
-  .newsletter-form .button {
-    min-height: 2.75rem;
-    align-self: end;
   }
 }
 
