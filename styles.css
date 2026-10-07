@@ -582,13 +582,6 @@ a:hover {
    CONTAINER QUERY
    ============================================================ */
 
-/*
-  The vendor card responds to its own container width rather
-  than the viewport width.
-
-  This is intentionally separate from the medium/large viewport
-  breakpoints.
-*/
 
 @container (min-width: 32rem) {
 
@@ -838,7 +831,6 @@ a:hover {
 
 /* ============================================================
    MEDIUM LAYOUT
-   42rem / approximately 672px
    ============================================================ */
 
 @media (min-width: 42rem) {
@@ -1010,7 +1002,6 @@ a:hover {
 
 /* ============================================================
    LARGE LAYOUT
-   58rem / approximately 928px
    ============================================================ */
 
 @media (min-width: 58rem) {
