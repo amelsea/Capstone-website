@@ -652,13 +652,10 @@
 
   .newsletter-form {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    align-items: end;
     gap: var(--space-md);
   }
 
   .newsletter-form label {
-    grid-column: 1 / -1;
     font-weight: 700;
   }
 
@@ -677,7 +674,21 @@
 
   .newsletter-form .button {
     min-height: 2.75rem;
-    align-self: end;
+  }
+
+  @media (min-width: 42rem) {
+    .newsletter-form {
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: end;
+    }
+
+    .newsletter-form label {
+      grid-column: 1 / -1;
+    }
+
+    .newsletter-form .button {
+      align-self: end;
+    }
   }
 }
 
