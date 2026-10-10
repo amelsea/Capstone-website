@@ -51,7 +51,6 @@ The project includes these main files and folders:
 - `images/` — Contains images used for the hero section, vendors, parking, and market map.
 - `README.md` — Explains the project and how it is organized.
 
-*Check the repository for the exact CSS filename and any additional files.*
 
 ## Testing
 
